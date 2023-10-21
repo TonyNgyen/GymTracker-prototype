@@ -1,7 +1,8 @@
+import Link from "next/link";
 import React from "react";
 
 function Navbar() {
-  return <div>GymTracker</div>;
+  return <Link href={"/"}>GymTracker</Link>;
 }
 
 export default Navbar;
