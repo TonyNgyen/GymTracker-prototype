@@ -9,3 +9,16 @@ export async function POST(request) {
     return NextResponse.json({message: "Topic Created"}, {status: 201})
     //https://youtu.be/wNWyMsrpbz0?si=b0vkLmKcnR_plmNm&t=1718
 }
+
+export async function GET() {
+    await connectMongoDB();
+    const workout = await Workout.find();
+    return NextResponse.json({workout});
+}
+
+export async function DELETE(request) {
+    const id = request.nextUrl.searchParams.get("id");
+    await connectMongoDB();
+    await Workout.findByIdAndDelete(id);
+    return NextResponse.json({message: "Workout deleted"}, {status: 200})
+}
