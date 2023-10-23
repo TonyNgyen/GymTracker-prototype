@@ -3,6 +3,12 @@ import RemoveBtn from "./RemoveBtn";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
 
+const getWorkouts = async () => {
+  try {
+    const rest = await fetch("http://localhost:3000/api/workouts", { cache: "no-store" });
+  } catch (error) {}
+};
+
 function WorkoutList() {
   return (
     <>
