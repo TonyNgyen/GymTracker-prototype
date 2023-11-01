@@ -2,33 +2,35 @@ import React from "react";
 import RemoveBtn from "./RemoveBtn";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
+import Workout from "@/models/workout"
+import connectMongoDB from "@/libs/mongodb"
 
-const getWorkouts = async () => {
-  try {
-    const rest = await fetch("http://localhost:3000/api/workouts", { cache: "no-store" });
-  } catch (error) {}
-};
+await connectMongoDB();
+const workout = await Workout.find({});
+console.log("THIS WORKS")
+console.log("Workout List: ", workout)
 
-function WorkoutList() {
+export default async function WorkoutList() {
+
   return (
     <>
+      {workout.map((w) => (
       <div className="p-4 border border-slade-300 my-3 flex justify-between gap-5 items-start">
         <div>
-          <h2 className="font-bold text-2xl">Workout Name</h2>
-          <div>Workout Description</div>
+          <h2 className="font-bold text-2xl">{w.title}</h2>
+          <div>{w.description}</div>
         </div>
 
         <div className="flex gap-2">
           <RemoveBtn />
-          <Link href={"/editWorkout/123"}>
+          <Link href={`/editWorkout/${w._id}`}>
             <HiPencilAlt size={24} />
           </Link>
         </div>
       </div>
+      ))}
     </>
   );
 }
-
-export default WorkoutList;
 
 //https://youtu.be/wNWyMsrpbz0?si=4pZhxPrIvaD3VA2p&t=2459
