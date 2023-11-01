@@ -33,4 +33,4 @@ export default async function WorkoutList() {
   );
 }
 
-//https://youtu.be/wNWyMsrpbz0?si=4pZhxPrIvaD3VA2p&t=2459
+//https://youtu.be/wNWyMsrpbz0?si=zw2_QR0JVXyNqbtM&t=2665
