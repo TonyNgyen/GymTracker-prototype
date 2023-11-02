@@ -7,8 +7,6 @@ import connectMongoDB from "@/libs/mongodb"
 
 await connectMongoDB();
 const workout = await Workout.find({});
-console.log("THIS WORKS")
-console.log("Workout List: ", workout)
 
 export default async function WorkoutList() {
 
