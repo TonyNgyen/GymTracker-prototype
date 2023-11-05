@@ -55,5 +55,3 @@ export default async function WorkoutList() {
     </>
   );
 }
-
-//https://youtu.be/wNWyMsrpbz0?si=stqUtLbeyGyvx6Rt&t=2914
