@@ -32,13 +32,15 @@ const getWorkout = async () => {
 };
 
 export default async function WorkoutList() {
-
   const workout = await getWorkout();
 
   return (
     <>
       {workout["workout"].map((w) => (
-        <div className="p-4 border border-slade-300 my-3 flex justify-between gap-5 items-start" key={w._id}>
+        <div
+          className="p-4 border border-slade-300 my-3 flex justify-between gap-5 items-start"
+          key={w._id}
+        >
           <div>
             <h2 className="font-bold text-2xl">{w.title}</h2>
             <div>{w.description}</div>

@@ -20,7 +20,13 @@ const getWorkoutById = async (id) => {
 async function EditWorkout({ params }) {
   const { id } = params;
   const topic = await getWorkoutById(id);
-  return <EditWorkoutForm id={id} title={topic["workout"]["title"]} description={topic["workout"]["description"]} />;
+  return (
+    <EditWorkoutForm
+      id={id}
+      title={topic["workout"]["title"]}
+      description={topic["workout"]["description"]}
+    />
+  );
 }
 
 export default EditWorkout;

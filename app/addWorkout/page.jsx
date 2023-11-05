@@ -10,31 +10,31 @@ export default function AddWorkout() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!title || !description) {
-      alert("Title and description are required")
-      return
+      alert("Title and description are required");
+      return;
     }
 
     try {
       const res = await fetch("http://localhost:3000/api/workouts", {
         method: "POST",
         headers: {
-          "Content-type": "application/json"
+          "Content-type": "application/json",
         },
-        body: JSON.stringify({title, description}),
+        body: JSON.stringify({ title, description }),
       });
 
       if (res.ok) {
         router.push("/");
         router.refresh();
       } else {
-        throw new Error("Failed to create workout")
+        throw new Error("Failed to create workout");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
@@ -54,7 +54,10 @@ export default function AddWorkout() {
         className="border border-slate-500 px-8 py-2"
       />
 
-      <button type="submit" className="bg-green-600 font-bold text-white py-3 px-6 w-fit">
+      <button
+        type="submit"
+        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+      >
         Add Workout
       </button>
     </form>
