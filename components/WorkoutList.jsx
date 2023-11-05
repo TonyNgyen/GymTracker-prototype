@@ -45,7 +45,7 @@ export default async function WorkoutList() {
           </div>
 
           <div className="flex gap-2">
-            <RemoveBtn />
+            <RemoveBtn id={w._id} />
             <Link href={`/editWorkout/${w._id}`}>
               <HiPencilAlt size={24} />
             </Link>
