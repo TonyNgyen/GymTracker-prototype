@@ -6,7 +6,10 @@ export async function POST(request) {
   const { title, workouts } = await request.json();
   await connectMongoDB();
   await WorkoutSchedule.create({ title, workouts });
-  return NextResponse.json({ message: "Workout Schedule Created" }, { status: 201 });
+  return NextResponse.json(
+    { message: "Workout Schedule Created" },
+    { status: 201 }
+  );
 }
 
 export async function GET() {
@@ -19,5 +22,8 @@ export async function DELETE(request) {
   const id = request.nextUrl.searchParams.get("id");
   await connectMongoDB();
   await WorkoutSchedule.findByIdAndDelete(id);
-  return NextResponse.json({ message: "Workout Schedule deleted" }, { status: 200 });
+  return NextResponse.json(
+    { message: "Workout Schedule deleted" },
+    { status: 200 }
+  );
 }
