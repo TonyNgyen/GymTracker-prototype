@@ -1,32 +1,32 @@
 import EditWorkoutForm from "@/components/EditWorkoutForm";
 import React from "react";
 
-const getWorkoutById = async (id) => {
+const getWorkoutScheduleById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/workouts/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/workoutSchedules/${id}`, {
       cache: "no-store",
     });
 
     if (!res.ok) {
-      throw new Error("Failed to fetch workout");
+      throw new Error("Failed to fetch workout schedule");
     }
 
     return res.json();
   } catch (error) {
-    console.log("Error loading workout: ", error);
+    console.log("Error loading workout schedule: ", error);
   }
 };
 
-async function EditWorkout({ params }) {
+async function EditWorkoutSchedule({ params }) {
   const { id } = params;
-  const topic = await getWorkoutById(id);
+  const topic = await getWorkoutScheduleById(id);
   return (
-    <EditWorkoutForm
+    <EditWorkoutScheduleForm
       id={id}
-      title={topic["workout"]["title"]}
-      description={topic["workout"]["description"]}
+      title={topic["workoutSchedule"]["title"]}
+      workouts={topic["workoutSchedule"]["workouts"]}
     />
   );
 }
 
-export default EditWorkout;
+export default EditWorkoutSchedule;
