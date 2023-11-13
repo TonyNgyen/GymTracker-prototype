@@ -12,24 +12,15 @@ export default function AddWorkout() {
   const [name, setName] = useState("");
   const [workouts, setWorkouts] = useState("");
 
+  // VARIABLES AND FUNCTIONS USED FOR MONDAY
   const [mondayName, setMondayName] = useState("");
   const [mondaySets, setMondaySets] = useState("");
   const [mondayReps, setMondayReps] = useState("");
   const [mondayWorkouts, setMondayWorkouts] = useState([]);
 
-  const [tuesdayName, setTuesdayName] = useState("");
-  const [tuesdaySets, setTuesdaySets] = useState("");
-  const [tuesdayReps, setTuesdayReps] = useState("");
-  const [tuesdayWorkouts, setTuesdayWorkouts] = useState([]);
-
   const [modalMonday, setModalMonday] = useState(false);
   const toggleModalMonday = () => {
     setModalMonday(!modalMonday);
-  };
-
-  const [modalTuesday, setModalTuesday] = useState(false);
-  const toggleModalTuesday = () => {
-    setModalTuesday(!modalTuesday);
   };
 
   const saveMonday = (e) => {
@@ -58,26 +49,23 @@ export default function AddWorkout() {
       alert("Workouts are required");
       return;
     }
-    setWorkouts({...workouts, monday: mondayWorkouts})
-  }
-
-  const confirmWorkoutTuesday = (e) => {
-    e.preventDefault();
-    if (!mondayWorkouts) {
-      alert("Workouts are required");
-      return;
-    }
-    setWorkouts({...workouts, tuesday: tuesdayWorkouts})
-  }
-
-  const debug = (e) => {
-    e.preventDefault();
-    console.log(workouts);
+    setWorkouts({ ...workouts, monday: mondayWorkouts });
   };
 
   const debugMonday = (e) => {
     e.preventDefault();
     console.log(mondayWorkouts);
+  };
+
+  // VARIABLES AND FUNCTIONS USED FOR TUESDAY
+  const [tuesdayName, setTuesdayName] = useState("");
+  const [tuesdaySets, setTuesdaySets] = useState("");
+  const [tuesdayReps, setTuesdayReps] = useState("");
+  const [tuesdayWorkouts, setTuesdayWorkouts] = useState([]);
+
+  const [modalTuesday, setModalTuesday] = useState(false);
+  const toggleModalTuesday = () => {
+    setModalTuesday(!modalTuesday);
   };
 
   const saveTuesday = (e) => {
@@ -100,8 +88,58 @@ export default function AddWorkout() {
     setTuesdayReps("");
   };
 
-  const saveWednesday = () => {
-    console.log("Wednesday");
+  const confirmWorkoutTuesday = (e) => {
+    e.preventDefault();
+    if (!mondayWorkouts) {
+      alert("Workouts are required");
+      return;
+    }
+    setWorkouts({ ...workouts, tuesday: tuesdayWorkouts });
+  };
+
+  // VARIABLES AND FUNCTIONS USED FOR TUESDAY
+  const [tuesdayName, setTuesdayName] = useState("");
+  const [tuesdaySets, setTuesdaySets] = useState("");
+  const [tuesdayReps, setTuesdayReps] = useState("");
+  const [tuesdayWorkouts, setTuesdayWorkouts] = useState([]);
+
+  const [modalTuesday, setModalTuesday] = useState(false);
+  const toggleModalTuesday = () => {
+    setModalTuesday(!modalTuesday);
+  };
+
+  const saveTuesday = (e) => {
+    e.preventDefault();
+    if (!tuesdayName || !tuesdaySets || !tuesdayReps) {
+      alert("Please fill in required inputs");
+      return;
+    }
+    setTuesdayWorkouts([
+      ...tuesdayWorkouts,
+      {
+        id: tuesdayWorkouts.length,
+        name: tuesdayName,
+        sets: tuesdaySets,
+        reps: tuesdayReps,
+      },
+    ]);
+    setTuesdayName("");
+    setTuesdaySets("");
+    setTuesdayReps("");
+  };
+
+  const confirmWorkoutTuesday = (e) => {
+    e.preventDefault();
+    if (!mondayWorkouts) {
+      alert("Workouts are required");
+      return;
+    }
+    setWorkouts({ ...workouts, tuesday: tuesdayWorkouts });
+  };
+
+  const debug = (e) => {
+    e.preventDefault();
+    console.log(workouts);
   };
 
   const saveThursday = () => {
@@ -256,7 +294,7 @@ export default function AddWorkout() {
             <IoIosCheckmarkCircle size={40} />
           </button>
         </div>
-      </article>     
+      </article>
 
       {mondayWorkouts.map((workout) => (
         <article className="flex text-3xl bg-blue-400 py-4 px-4 justify-evenly">
