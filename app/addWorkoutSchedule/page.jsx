@@ -97,44 +97,44 @@ export default function AddWorkout() {
     setWorkouts({ ...workouts, tuesday: tuesdayWorkouts });
   };
 
-  // VARIABLES AND FUNCTIONS USED FOR TUESDAY
-  const [tuesdayName, setTuesdayName] = useState("");
-  const [tuesdaySets, setTuesdaySets] = useState("");
-  const [tuesdayReps, setTuesdayReps] = useState("");
-  const [tuesdayWorkouts, setTuesdayWorkouts] = useState([]);
+  // VARIABLES AND FUNCTIONS USED FOR WEDNESDAY
+  const [wednesdayName, setWednesdayName] = useState("");
+  const [wednesdaySets, setWednesdaySets] = useState("");
+  const [wednesdayReps, setWednesdayReps] = useState("");
+  const [wednesdayWorkouts, setWednesdayWorkouts] = useState([]);
 
-  const [modalTuesday, setModalTuesday] = useState(false);
-  const toggleModalTuesday = () => {
-    setModalTuesday(!modalTuesday);
+  const [modalWednesday, setModalWednesday] = useState(false);
+  const toggleModalWednesday = () => {
+    setModalWednesday(!modalWednesday);
   };
 
-  const saveTuesday = (e) => {
+  const saveWednesday = (e) => {
     e.preventDefault();
-    if (!tuesdayName || !tuesdaySets || !tuesdayReps) {
+    if (!wednesdayName || !wednesdaySets || !wednesdayReps) {
       alert("Please fill in required inputs");
       return;
     }
-    setTuesdayWorkouts([
-      ...tuesdayWorkouts,
+    setWednesdayWorkouts([
+      ...wednesdayWorkouts,
       {
-        id: tuesdayWorkouts.length,
-        name: tuesdayName,
-        sets: tuesdaySets,
-        reps: tuesdayReps,
+        id: wednesdayWorkouts.length,
+        name: wednesdayName,
+        sets: wednesdaySets,
+        reps: wednesdayReps,
       },
     ]);
-    setTuesdayName("");
-    setTuesdaySets("");
-    setTuesdayReps("");
+    setWednesdayName("");
+    setWednesdaySets("");
+    setWednesdayReps("");
   };
 
-  const confirmWorkoutTuesday = (e) => {
+  const confirmWorkoutWednesday = (e) => {
     e.preventDefault();
     if (!mondayWorkouts) {
       alert("Workouts are required");
       return;
     }
-    setWorkouts({ ...workouts, tuesday: tuesdayWorkouts });
+    setWorkouts({ ...workouts, wednesday: wednesdayWorkouts });
   };
 
   const debug = (e) => {
