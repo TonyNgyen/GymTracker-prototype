@@ -321,13 +321,13 @@ export default function AddWorkout() {
     e.preventDefault();
 
     if (
-      !mondayWorkouts ||
-      !tuesdayWorkouts ||
-      !wednesdayWorkouts ||
-      !thursdayWorkouts ||
-      !fridayWorkouts ||
-      !saturdayWorkouts ||
-      !sundayWorkouts
+      !mondayWorkouts.length ||
+      !tuesdayWorkouts.length ||
+      !wednesdayWorkouts.length ||
+      !thursdayWorkouts.length ||
+      !fridayWorkouts.length ||
+      !saturdayWorkouts.length ||
+      !sundayWorkouts.length
     ) {
       alert("Workouts are required");
       return;
@@ -467,7 +467,7 @@ export default function AddWorkout() {
         </article>
       ))}
 
-      {/* // TUESDAY SECTION */}
+      {/* TUESDAY SECTION */}
       <article className="flex">
         <h1 className="text-4xl">Tuesday</h1>
         <div>
@@ -561,7 +561,7 @@ export default function AddWorkout() {
         </article>
       ))}
 
-      {/* // WEDNESDAY SECTION */}
+      {/* WEDNESDAY SECTION */}
       <article className="flex">
         <h1 className="text-4xl">Wednesday</h1>
         <div>
@@ -655,7 +655,7 @@ export default function AddWorkout() {
         </article>
       ))}
 
-      {/* // THURSDAY SECTION */}
+      {/* THURSDAY SECTION */}
       <article className="flex">
         <h1 className="text-4xl">Thursday</h1>
         <div>
@@ -741,6 +741,288 @@ export default function AddWorkout() {
               e.preventDefault();
               setThursdayWorkouts(
                 thursdayWorkouts.filter((w) => w.id !== workout.id)
+              );
+            }}
+          >
+            <HiOutlineTrash size={40} />
+          </button>
+        </article>
+      ))}
+
+      {/* FRIDAY SECTION */}
+      <article className="flex">
+        <h1 className="text-4xl">Friday</h1>
+        <div>
+          <button onClick={toggleModalFriday} className="text-green-600">
+            <IoIosAddCircle size={40} />
+          </button>
+          {modalFriday && (
+            <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
+              <form>
+                <input
+                  onChange={(e) => {
+                    setFridayName(e.target.value);
+                  }}
+                  value={fridayName}
+                  type="text"
+                  placeholder="Workout"
+                  className="border border-slate-500 px-8 py-2 "
+                />
+
+                <input
+                  onChange={(e) => {
+                    setFridaySets(e.target.value);
+                  }}
+                  value={fridaySets}
+                  type="number"
+                  placeholder="Sets"
+                  className="border border-slate-500 px-8 py-2 "
+                />
+
+                <input
+                  onChange={(e) => {
+                    setFridayReps(e.target.value);
+                  }}
+                  value={fridayReps}
+                  type="number"
+                  placeholder="Reps"
+                  className="border border-slate-500 px-8 py-2 "
+                />
+
+                <button
+                  type="submit"
+                  className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
+                  onClick={setDayFunctions["Friday"]}
+                >
+                  Add Workout Day
+                </button>
+                {fridayWorkouts.map((workout) => (
+                  <article className="flex text-3xl bg-blue-400 py-4 px-4 justify-evenly">
+                    <h1>{workout.name}</h1>
+                    <h1>{workout.sets}</h1>
+                    <h1>{workout.reps}</h1>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setFridayWorkouts(
+                          fridayWorkouts.filter((w) => w.id !== workout.id)
+                        );
+                      }}
+                    >
+                      <HiOutlineTrash size={40} />
+                    </button>
+                  </article>
+                ))}
+                <button onClick={toggleModalFriday}>
+                  <h1>Close</h1>
+                </button>
+              </form>
+            </div>
+          )}
+          <button onClick={confirmWorkoutFriday} className="text-green-600">
+            <IoIosCheckmarkCircle size={40} />
+          </button>
+        </div>
+      </article>
+
+      {fridayWorkouts.map((workout) => (
+        <article className="flex text-3xl bg-blue-400 py-4 px-4 justify-evenly">
+          <h1>{workout.name}</h1>
+          <h1>{workout.sets}</h1>
+          <h1>{workout.reps}</h1>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setFridayWorkouts(
+                fridayWorkouts.filter((w) => w.id !== workout.id)
+              );
+            }}
+          >
+            <HiOutlineTrash size={40} />
+          </button>
+        </article>
+      ))}
+
+      {/* SATURDAY SECTION */}
+      <article className="flex">
+        <h1 className="text-4xl">Saturday</h1>
+        <div>
+          <button onClick={toggleModalSaturday} className="text-green-600">
+            <IoIosAddCircle size={40} />
+          </button>
+          {modalSaturday && (
+            <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
+              <form>
+                <input
+                  onChange={(e) => {
+                    setSaturdayName(e.target.value);
+                  }}
+                  value={saturdayName}
+                  type="text"
+                  placeholder="Workout"
+                  className="border border-slate-500 px-8 py-2 "
+                />
+
+                <input
+                  onChange={(e) => {
+                    setSaturdaySets(e.target.value);
+                  }}
+                  value={saturdaySets}
+                  type="number"
+                  placeholder="Sets"
+                  className="border border-slate-500 px-8 py-2 "
+                />
+
+                <input
+                  onChange={(e) => {
+                    setSaturdayReps(e.target.value);
+                  }}
+                  value={saturdayReps}
+                  type="number"
+                  placeholder="Reps"
+                  className="border border-slate-500 px-8 py-2 "
+                />
+
+                <button
+                  type="submit"
+                  className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
+                  onClick={setDayFunctions["Saturday"]}
+                >
+                  Add Workout Day
+                </button>
+                {saturdayWorkouts.map((workout) => (
+                  <article className="flex text-3xl bg-blue-400 py-4 px-4 justify-evenly">
+                    <h1>{workout.name}</h1>
+                    <h1>{workout.sets}</h1>
+                    <h1>{workout.reps}</h1>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setSaturdayWorkouts(
+                          saturdayWorkouts.filter((w) => w.id !== workout.id)
+                        );
+                      }}
+                    >
+                      <HiOutlineTrash size={40} />
+                    </button>
+                  </article>
+                ))}
+                <button onClick={toggleModalSaturday}>
+                  <h1>Close</h1>
+                </button>
+              </form>
+            </div>
+          )}
+          <button onClick={confirmWorkoutSaturday} className="text-green-600">
+            <IoIosCheckmarkCircle size={40} />
+          </button>
+        </div>
+      </article>
+
+      {saturdayWorkouts.map((workout) => (
+        <article className="flex text-3xl bg-blue-400 py-4 px-4 justify-evenly">
+          <h1>{workout.name}</h1>
+          <h1>{workout.sets}</h1>
+          <h1>{workout.reps}</h1>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setSaturdayWorkouts(
+                saturdayWorkouts.filter((w) => w.id !== workout.id)
+              );
+            }}
+          >
+            <HiOutlineTrash size={40} />
+          </button>
+        </article>
+      ))}
+
+      {/* SUNDAY SECTION */}
+      <article className="flex">
+        <h1 className="text-4xl">Sunday</h1>
+        <div>
+          <button onClick={toggleModalSunday} className="text-green-600">
+            <IoIosAddCircle size={40} />
+          </button>
+          {modalSunday && (
+            <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
+              <form>
+                <input
+                  onChange={(e) => {
+                    setSundayName(e.target.value);
+                  }}
+                  value={sundayName}
+                  type="text"
+                  placeholder="Workout"
+                  className="border border-slate-500 px-8 py-2 "
+                />
+
+                <input
+                  onChange={(e) => {
+                    setSundaySets(e.target.value);
+                  }}
+                  value={sundaySets}
+                  type="number"
+                  placeholder="Sets"
+                  className="border border-slate-500 px-8 py-2 "
+                />
+
+                <input
+                  onChange={(e) => {
+                    setSundayReps(e.target.value);
+                  }}
+                  value={sundayReps}
+                  type="number"
+                  placeholder="Reps"
+                  className="border border-slate-500 px-8 py-2 "
+                />
+
+                <button
+                  type="submit"
+                  className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
+                  onClick={setDayFunctions["Sunday"]}
+                >
+                  Add Workout Day
+                </button>
+                {sundayWorkouts.map((workout) => (
+                  <article className="flex text-3xl bg-blue-400 py-4 px-4 justify-evenly">
+                    <h1>{workout.name}</h1>
+                    <h1>{workout.sets}</h1>
+                    <h1>{workout.reps}</h1>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setSundayWorkouts(
+                          sundayWorkouts.filter((w) => w.id !== workout.id)
+                        );
+                      }}
+                    >
+                      <HiOutlineTrash size={40} />
+                    </button>
+                  </article>
+                ))}
+                <button onClick={toggleModalSunday}>
+                  <h1>Close</h1>
+                </button>
+              </form>
+            </div>
+          )}
+          <button onClick={confirmWorkoutSunday} className="text-green-600">
+            <IoIosCheckmarkCircle size={40} />
+          </button>
+        </div>
+      </article>
+
+      {sundayWorkouts.map((workout) => (
+        <article className="flex text-3xl bg-blue-400 py-4 px-4 justify-evenly">
+          <h1>{workout.name}</h1>
+          <h1>{workout.sets}</h1>
+          <h1>{workout.reps}</h1>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setSundayWorkouts(
+                sundayWorkouts.filter((w) => w.id !== workout.id)
               );
             }}
           >
