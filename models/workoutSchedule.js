@@ -3,6 +3,7 @@ import {Schema, mongoose} from "mongoose";
 const workoutScheduleSchema = new Schema(
     {
         title: String,
+        rest: Boolean,
         workouts: {},
     },
     {
