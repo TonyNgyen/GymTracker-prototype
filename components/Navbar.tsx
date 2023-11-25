@@ -3,8 +3,8 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div className="bg-red-400 flex">
-      <Link href={"/"} className="text-5xl font-bold bg-amber-900 inline-block">
+    <div className="flex justify-center py-10">
+      <Link href={"/"} className="text-5xl font-bold  inline-block">
         GymTracker
       </Link>
     </div>
