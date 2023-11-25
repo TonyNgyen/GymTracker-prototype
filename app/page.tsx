@@ -7,7 +7,7 @@ export default function Home() {
   const day = new Date().getDay();
   return (
     <>
-      <section className="text-center">
+      <section className="text-center mb-8">
         <Link
           href={"/addWorkout"}
           className="bg-indigo-200 py-4 px-4 rounded-xl inline-block mr-3"
@@ -21,8 +21,9 @@ export default function Home() {
           Add workout schedule
         </Link>
       </section>
-      <WorkoutList />
-      <WorkoutScheduleList day={"Monday"}/>
+      <h1 className="text-4xl font-bold text-center mb-8">Today is {weekday[day]}</h1>
+      {/* <WorkoutList /> */}
+      <WorkoutScheduleList day={weekday[day]}/>
     </>
   );
 }
