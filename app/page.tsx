@@ -4,8 +4,18 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Link href={"/addWorkout"}>Add workout</Link>
-      <Link href={"/addWorkoutSchedule"}>Add workout schedule</Link>
+      <Link
+        href={"/addWorkout"}
+        className="bg-indigo-200 py-4 px-4 rounded-xl inline-block"
+      >
+        Add workout
+      </Link>
+      <Link
+        href={"/addWorkoutSchedule"}
+        className="bg-indigo-200 py-4 px-4 rounded-xl inline-block"
+      >
+        Add workout schedule
+      </Link>
       <WorkoutList />
     </>
   );

@@ -38,7 +38,7 @@ export default async function WorkoutList() {
     <>
       {workout["workout"].map((w) => (
         <div
-          className="p-4 border border-slade-300 my-3 flex justify-between gap-5 items-start"
+          className="p-4 border border-slade-300 mb-3 flex justify-between gap-5 items-start"
           key={w._id}
         >
           <div>
