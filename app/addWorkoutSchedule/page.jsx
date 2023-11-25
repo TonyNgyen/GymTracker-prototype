@@ -19,8 +19,8 @@ export default function AddWorkout() {
   const [mondayWorkouts, setMondayWorkouts] = useState([]);
   const [restMonday, setRestMonday] = useState(false);
   const toggleRestMonday = () => {
-    setRestMonday(!restMonday)
-  }
+    setRestMonday(!restMonday);
+  };
 
   const [modalMonday, setModalMonday] = useState(false);
   const toggleModalMonday = () => {
@@ -68,8 +68,8 @@ export default function AddWorkout() {
   const [tuesdayWorkouts, setTuesdayWorkouts] = useState([]);
   const [restTuesday, setRestTuesday] = useState(false);
   const toggleRestTuesday = () => {
-    setRestTuesday(!restTuesday)
-  }
+    setRestTuesday(!restTuesday);
+  };
 
   const [modalTuesday, setModalTuesday] = useState(false);
   const toggleModalTuesday = () => {
@@ -112,8 +112,8 @@ export default function AddWorkout() {
   const [wednesdayWorkouts, setWednesdayWorkouts] = useState([]);
   const [restWednesday, setRestWednesday] = useState(false);
   const toggleRestWednesday = () => {
-    setRestWednesday(!restWednesday)
-  }
+    setRestWednesday(!restWednesday);
+  };
 
   const [modalWednesday, setModalWednesday] = useState(false);
   const toggleModalWednesday = () => {
@@ -156,8 +156,8 @@ export default function AddWorkout() {
   const [thursdayWorkouts, setThursdayWorkouts] = useState([]);
   const [restThursday, setRestThursday] = useState(false);
   const toggleRestThursday = () => {
-    setRestThursday(!restThursday)
-  }
+    setRestThursday(!restThursday);
+  };
 
   const [modalThursday, setModalThursday] = useState(false);
   const toggleModalThursday = () => {
@@ -200,8 +200,8 @@ export default function AddWorkout() {
   const [fridayWorkouts, setFridayWorkouts] = useState([]);
   const [restFriday, setRestFriday] = useState(false);
   const toggleRestFriday = () => {
-    setRestFriday(!restFriday)
-  }
+    setRestFriday(!restFriday);
+  };
 
   const [modalFriday, setModalFriday] = useState(false);
   const toggleModalFriday = () => {
@@ -244,8 +244,8 @@ export default function AddWorkout() {
   const [saturdayWorkouts, setSaturdayWorkouts] = useState([]);
   const [restSaturday, setRestSaturday] = useState(false);
   const toggleRestSaturday = () => {
-    setRestSaturday(!restSaturday)
-  }
+    setRestSaturday(!restSaturday);
+  };
 
   const [modalSaturday, setModalSaturday] = useState(false);
   const toggleModalSaturday = () => {
@@ -288,8 +288,8 @@ export default function AddWorkout() {
   const [sundayWorkouts, setSundayWorkouts] = useState([]);
   const [restSunday, setRestSunday] = useState(false);
   const toggleRestSunday = () => {
-    setRestSunday(!restSunday)
-  }
+    setRestSunday(!restSunday);
+  };
 
   const [modalSunday, setModalSunday] = useState(false);
   const toggleModalSunday = () => {
