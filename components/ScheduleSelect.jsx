@@ -1,9 +1,42 @@
-import React from 'react'
+"use client";
 
-function ScheduleSelect() {
+import React, { useState } from "react";
+import DayDisplay from "./DayDisplay";
+
+function ScheduleSelect({ schedule, day }) {
+  const [select, setSelect] = useState(Object.keys(schedule)[0]);
   return (
-    <div>ScheduleSelect</div>
-  )
+    <>
+      <article className="flex text-center justify-center mb-10">
+        <DayDisplay day={day} />
+        <select
+          onChange={(e) => setSelect(e.target.value)}
+          className="text-4xl font-bold"
+        >
+          {Object.keys(schedule).map((name) => (
+            <option key="1">{name}</option>
+          ))}
+        </select>
+      </article>
+      <section className="md:mx-32 lg:mx-80">
+        <div className="grid grid-cols-3 text-center text-4xl font-bold mb-4">
+          <h1>Workouts</h1>
+          <h1>Sets</h1>
+          <h1>Reps</h1>
+        </div>
+        {schedule[select][day].map((w) => (
+          <div
+            key={w.id}
+            className="bg-indigo-200 bordered rounded-2xl grid-cols-3 grid text-center py-4 text-2xl mb-2"
+          >
+            <p>{w.name}</p>
+            <p>{w.sets}</p>
+            <p>{w.reps}</p>
+          </div>
+        ))}
+      </section>
+    </>
+  );
 }
 
-export default ScheduleSelect
+export default ScheduleSelect;
