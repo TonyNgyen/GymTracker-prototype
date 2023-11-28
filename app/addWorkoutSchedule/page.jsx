@@ -405,7 +405,7 @@ export default function AddWorkout() {
       <article className="flex">
         <h1 className="text-4xl">Monday</h1>
         <div>
-          <button onClick={toggleModalMonday} className="text-green-600">
+          <button onClick={toggleModalMonday} className="text-indigo-200">
             <IoIosAddCircle size={40} />
           </button>
           {modalMonday && (
@@ -471,7 +471,7 @@ export default function AddWorkout() {
               </form>
             </div>
           )}
-          <button onClick={confirmWorkoutMonday} className="text-green-600">
+          <button onClick={confirmWorkoutMonday} className="text-indigo-200">
             <IoIosCheckmarkCircle size={40} />
           </button>
         </div>
@@ -499,7 +499,7 @@ export default function AddWorkout() {
       <article className="flex">
         <h1 className="text-4xl">Tuesday</h1>
         <div>
-          <button onClick={toggleModalTuesday} className="text-green-600">
+          <button onClick={toggleModalTuesday} className="text-indigo-200">
             <IoIosAddCircle size={40} />
           </button>
           {modalTuesday && (
@@ -565,7 +565,7 @@ export default function AddWorkout() {
               </form>
             </div>
           )}
-          <button onClick={confirmWorkoutTuesday} className="text-green-600">
+          <button onClick={confirmWorkoutTuesday} className="text-indigo-200">
             <IoIosCheckmarkCircle size={40} />
           </button>
         </div>
@@ -593,7 +593,7 @@ export default function AddWorkout() {
       <article className="flex">
         <h1 className="text-4xl">Wednesday</h1>
         <div>
-          <button onClick={toggleModalWednesday} className="text-green-600">
+          <button onClick={toggleModalWednesday} className="text-indigo-200">
             <IoIosAddCircle size={40} />
           </button>
           {modalWednesday && (
@@ -659,7 +659,7 @@ export default function AddWorkout() {
               </form>
             </div>
           )}
-          <button onClick={confirmWorkoutWednesday} className="text-green-600">
+          <button onClick={confirmWorkoutWednesday} className="text-indigo-200">
             <IoIosCheckmarkCircle size={40} />
           </button>
         </div>
@@ -687,7 +687,7 @@ export default function AddWorkout() {
       <article className="flex">
         <h1 className="text-4xl">Thursday</h1>
         <div>
-          <button onClick={toggleModalThursday} className="text-green-600">
+          <button onClick={toggleModalThursday} className="text-indigo-200">
             <IoIosAddCircle size={40} />
           </button>
           {modalThursday && (
@@ -753,7 +753,7 @@ export default function AddWorkout() {
               </form>
             </div>
           )}
-          <button onClick={confirmWorkoutThursday} className="text-green-600">
+          <button onClick={confirmWorkoutThursday} className="text-indigo-200">
             <IoIosCheckmarkCircle size={40} />
           </button>
         </div>
@@ -781,7 +781,7 @@ export default function AddWorkout() {
       <article className="flex">
         <h1 className="text-4xl">Friday</h1>
         <div>
-          <button onClick={toggleModalFriday} className="text-green-600">
+          <button onClick={toggleModalFriday} className="text-indigo-200">
             <IoIosAddCircle size={40} />
           </button>
           {modalFriday && (
@@ -847,7 +847,7 @@ export default function AddWorkout() {
               </form>
             </div>
           )}
-          <button onClick={confirmWorkoutFriday} className="text-green-600">
+          <button onClick={confirmWorkoutFriday} className="text-indigo-200">
             <IoIosCheckmarkCircle size={40} />
           </button>
         </div>
@@ -875,7 +875,7 @@ export default function AddWorkout() {
       <article className="flex">
         <h1 className="text-4xl">Saturday</h1>
         <div>
-          <button onClick={toggleModalSaturday} className="text-green-600">
+          <button onClick={toggleModalSaturday} className="text-indigo-200">
             <IoIosAddCircle size={40} />
           </button>
           {modalSaturday && (
@@ -941,7 +941,7 @@ export default function AddWorkout() {
               </form>
             </div>
           )}
-          <button onClick={confirmWorkoutSaturday} className="text-green-600">
+          <button onClick={confirmWorkoutSaturday} className="text-indigo-200">
             <IoIosCheckmarkCircle size={40} />
           </button>
         </div>
@@ -969,7 +969,7 @@ export default function AddWorkout() {
       <article className="flex">
         <h1 className="text-4xl">Sunday</h1>
         <div>
-          <button onClick={toggleModalSunday} className="text-green-600">
+          <button onClick={toggleModalSunday} className="text-indigo-200">
             <IoIosAddCircle size={40} />
           </button>
           {modalSunday && (
@@ -1035,7 +1035,7 @@ export default function AddWorkout() {
               </form>
             </div>
           )}
-          <button onClick={confirmWorkoutSunday} className="text-green-600">
+          <button onClick={confirmWorkoutSunday} className="text-indigo-200">
             <IoIosCheckmarkCircle size={40} />
           </button>
         </div>
@@ -1059,21 +1059,21 @@ export default function AddWorkout() {
         </article>
       ))}
 
-      <button
+      {/* <button
         onClick={debug}
         type="submit"
         className="bg-red-400 font-bold text-white py-3 px-6 w-fit"
       >
         Debug Workouts
-      </button>
+      </button> */}
 
-      <button
+      {/* <button
         onClick={debugMonday}
         type="submit"
         className="bg-red-400 font-bold text-white py-3 px-6 w-fit"
       >
         Debug Monday
-      </button>
+      </button> */}
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <button
