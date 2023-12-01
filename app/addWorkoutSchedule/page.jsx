@@ -403,10 +403,9 @@ export default function AddWorkout() {
 
       {/* MONDAY SECTION */}
       <main className="grid place-items-center">
-        <article className="flex mb-10 ">
-          <h1 className="text-4xl mr-4">Monday</h1>
-          <div>
-            <button onClick={toggleModalMonday} className="text-indigo-200">
+        <article className="flex mb-10">
+          <h1 className={(restMonday ? "line-through" : "") + " text-4xl mr-4"}>Monday</h1>
+            <button onClick={toggleModalMonday} className={(restMonday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
             {modalMonday && (
@@ -472,10 +471,12 @@ export default function AddWorkout() {
                 </form>
               </div>
             )}
-            <button onClick={confirmWorkoutMonday} className="text-indigo-200">
+            <button onClick={confirmWorkoutMonday} className={(restMonday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosCheckmarkCircle size={40} />
             </button>
-          </div>
+            <button onClick={toggleRestMonday} className= {(restMonday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
+              Rest Day
+            </button>
         </article>
 
         {mondayWorkouts.map((workout) => (
@@ -498,9 +499,8 @@ export default function AddWorkout() {
 
         {/* TUESDAY SECTION */}
         <article className="flex mb-10">
-          <h1 className="text-4xl mr-4">Tuesday</h1>
-          <div>
-            <button onClick={toggleModalTuesday} className="text-indigo-200">
+        <h1 className={(restTuesday ? "line-through" : "") + " text-4xl mr-4"}>Tuesday</h1>
+          <button onClick={toggleModalTuesday} className={(restTuesday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
             {modalTuesday && (
@@ -566,10 +566,12 @@ export default function AddWorkout() {
                 </form>
               </div>
             )}
-            <button onClick={confirmWorkoutTuesday} className="text-indigo-200">
+            <button onClick={confirmWorkoutTuesday} className={(restTuesday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosCheckmarkCircle size={40} />
             </button>
-          </div>
+            <button onClick={toggleRestTuesday} className= {(restTuesday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
+              Rest Day
+            </button>
         </article>
 
         {tuesdayWorkouts.map((workout) => (
@@ -592,9 +594,8 @@ export default function AddWorkout() {
 
         {/* WEDNESDAY SECTION */}
         <article className="flex mb-10">
-          <h1 className="text-4xl mr-4">Wednesday</h1>
-          <div>
-            <button onClick={toggleModalWednesday} className="text-indigo-200">
+        <h1 className={(restWednesday ? "line-through" : "") + " text-4xl mr-4"}>Wednesday</h1>
+          <button onClick={toggleModalWednesday} className={(restWednesday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
             {modalWednesday && (
@@ -660,13 +661,12 @@ export default function AddWorkout() {
                 </form>
               </div>
             )}
-            <button
-              onClick={confirmWorkoutWednesday}
-              className="text-indigo-200"
-            >
+            <button onClick={confirmWorkoutWednesday} className={(restWednesday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosCheckmarkCircle size={40} />
             </button>
-          </div>
+            <button onClick={toggleRestWednesday} className= {(restWednesday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
+              Rest Day
+            </button>
         </article>
 
         {wednesdayWorkouts.map((workout) => (
@@ -689,9 +689,8 @@ export default function AddWorkout() {
 
         {/* THURSDAY SECTION */}
         <article className="flex mb-10">
-          <h1 className="text-4xl mr-4">Thursday</h1>
-          <div>
-            <button onClick={toggleModalThursday} className="text-indigo-200">
+        <h1 className={(restThursday ? "line-through" : "") + " text-4xl mr-4"}>Thursday</h1>
+          <button onClick={toggleModalThursday} className={(restThursday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
             {modalThursday && (
@@ -757,13 +756,12 @@ export default function AddWorkout() {
                 </form>
               </div>
             )}
-            <button
-              onClick={confirmWorkoutThursday}
-              className="text-indigo-200"
-            >
+            <button onClick={confirmWorkoutThursday} className={(restThursday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosCheckmarkCircle size={40} />
             </button>
-          </div>
+            <button onClick={toggleRestThursday} className= {(restThursday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
+              Rest Day
+            </button>
         </article>
 
         {thursdayWorkouts.map((workout) => (
@@ -786,9 +784,8 @@ export default function AddWorkout() {
 
         {/* FRIDAY SECTION */}
         <article className="flex mb-10">
-          <h1 className="text-4xl mr-4">Friday</h1>
-          <div>
-            <button onClick={toggleModalFriday} className="text-indigo-200">
+        <h1 className={(restFriday ? "line-through" : "") + " text-4xl mr-4"}>Friday</h1>
+          <button onClick={toggleModalFriday} className={(restFriday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
             {modalFriday && (
@@ -854,10 +851,12 @@ export default function AddWorkout() {
                 </form>
               </div>
             )}
-            <button onClick={confirmWorkoutFriday} className="text-indigo-200">
+            <button onClick={confirmWorkoutFriday} className={(restFriday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosCheckmarkCircle size={40} />
             </button>
-          </div>
+            <button onClick={toggleRestFriday} className= {(restFriday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
+              Rest Day
+            </button>
         </article>
 
         {fridayWorkouts.map((workout) => (
@@ -880,9 +879,8 @@ export default function AddWorkout() {
 
         {/* SATURDAY SECTION */}
         <article className="flex mb-10">
-          <h1 className="text-4xl mr-4">Saturday</h1>
-          <div>
-            <button onClick={toggleModalSaturday} className="text-indigo-200">
+        <h1 className={(restSaturday ? "line-through" : "") + " text-4xl mr-4"}>Saturday</h1>
+          <button onClick={toggleModalSaturday} className={(restSaturday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
             {modalSaturday && (
@@ -948,13 +946,12 @@ export default function AddWorkout() {
                 </form>
               </div>
             )}
-            <button
-              onClick={confirmWorkoutSaturday}
-              className="text-indigo-200"
-            >
+            <button onClick={confirmWorkoutSaturday} className={(restSaturday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosCheckmarkCircle size={40} />
             </button>
-          </div>
+            <button onClick={toggleRestSaturday} className= {(restSaturday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
+              Rest Day
+            </button>
         </article>
 
         {saturdayWorkouts.map((workout) => (
@@ -977,9 +974,8 @@ export default function AddWorkout() {
 
         {/* SUNDAY SECTION */}
         <article className="flex mb-10">
-          <h1 className="text-4xl mr-4">Sunday</h1>
-          <div>
-            <button onClick={toggleModalSunday} className="text-indigo-200">
+        <h1 className={(restSunday ? "line-through" : "") + " text-4xl mr-4"}>Sunday</h1>
+          <button onClick={toggleModalSunday} className={(restSunday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
             {modalSunday && (
@@ -1045,10 +1041,12 @@ export default function AddWorkout() {
                 </form>
               </div>
             )}
-            <button onClick={confirmWorkoutSunday} className="text-indigo-200">
+            <button onClick={confirmWorkoutSunday} className={(restSunday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosCheckmarkCircle size={40} />
             </button>
-          </div>
+            <button onClick={toggleRestSunday} className= {(restSunday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
+              Rest Day
+            </button>
         </article>
 
         {sundayWorkouts.map((workout) => (
