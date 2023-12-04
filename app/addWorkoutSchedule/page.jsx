@@ -21,6 +21,17 @@ export default function AddWorkout() {
   const toggleRestMonday = () => {
     setRestMonday(!restMonday);
   };
+  const displayRestMonday = () => {
+    if (restMonday) {
+      return (
+        "Rest Day"
+      )
+    } else {
+      return (
+        "Workout Day"
+      )
+    }
+  }
 
   const [modalMonday, setModalMonday] = useState(false);
   const toggleModalMonday = () => {
@@ -70,6 +81,17 @@ export default function AddWorkout() {
   const toggleRestTuesday = () => {
     setRestTuesday(!restTuesday);
   };
+  const displayRestTuesday = () => {
+    if (restTuesday) {
+      return (
+        "Rest Day"
+      )
+    } else {
+      return (
+        "Workout Day"
+      )
+    }
+  }
 
   const [modalTuesday, setModalTuesday] = useState(false);
   const toggleModalTuesday = () => {
@@ -114,6 +136,17 @@ export default function AddWorkout() {
   const toggleRestWednesday = () => {
     setRestWednesday(!restWednesday);
   };
+  const displayRestWednesday = () => {
+    if (restWednesday) {
+      return (
+        "Rest Day"
+      )
+    } else {
+      return (
+        "Workout Day"
+      )
+    }
+  }
 
   const [modalWednesday, setModalWednesday] = useState(false);
   const toggleModalWednesday = () => {
@@ -158,6 +191,17 @@ export default function AddWorkout() {
   const toggleRestThursday = () => {
     setRestThursday(!restThursday);
   };
+  const displayRestThursday = () => {
+    if (restThursday) {
+      return (
+        "Rest Day"
+      )
+    } else {
+      return (
+        "Workout Day"
+      )
+    }
+  }
 
   const [modalThursday, setModalThursday] = useState(false);
   const toggleModalThursday = () => {
@@ -202,6 +246,17 @@ export default function AddWorkout() {
   const toggleRestFriday = () => {
     setRestFriday(!restFriday);
   };
+  const displayRestFriday = () => {
+    if (restFriday) {
+      return (
+        "Rest Day"
+      )
+    } else {
+      return (
+        "Workout Day"
+      )
+    }
+  }
 
   const [modalFriday, setModalFriday] = useState(false);
   const toggleModalFriday = () => {
@@ -246,6 +301,17 @@ export default function AddWorkout() {
   const toggleRestSaturday = () => {
     setRestSaturday(!restSaturday);
   };
+  const displayRestSaturday = () => {
+    if (restSaturday) {
+      return (
+        "Rest Day"
+      )
+    } else {
+      return (
+        "Workout Day"
+      )
+    }
+  }
 
   const [modalSaturday, setModalSaturday] = useState(false);
   const toggleModalSaturday = () => {
@@ -290,6 +356,17 @@ export default function AddWorkout() {
   const toggleRestSunday = () => {
     setRestSunday(!restSunday);
   };
+  const displayRestSunday = () => {
+    if (restSunday) {
+      return (
+        "Rest Day"
+      )
+    } else {
+      return (
+        "Workout Day"
+      )
+    }
+  }
 
   const [modalSunday, setModalSunday] = useState(false);
   const toggleModalSunday = () => {
@@ -404,7 +481,7 @@ export default function AddWorkout() {
       {/* MONDAY SECTION */}
       <main className="grid place-items-center">
         <article className="flex mb-10">
-          <h1 className={(restMonday ? "line-through" : "") + " text-4xl mr-4"}>Monday</h1>
+          <h1 className={(restMonday ? "text-opacity-10" : "") + " text-black text-black text-4xl mr-4"}>Monday</h1>
             <button onClick={toggleModalMonday} className={(restMonday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
@@ -475,7 +552,7 @@ export default function AddWorkout() {
               <IoIosCheckmarkCircle size={40} />
             </button>
             <button onClick={toggleRestMonday} className= {(restMonday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
-              Rest Day
+              {displayRestMonday()}
             </button>
         </article>
 
@@ -499,7 +576,7 @@ export default function AddWorkout() {
 
         {/* TUESDAY SECTION */}
         <article className="flex mb-10">
-        <h1 className={(restTuesday ? "line-through" : "") + " text-4xl mr-4"}>Tuesday</h1>
+        <h1 className={(restTuesday ? "text-opacity-10" : "") + " text-black text-4xl mr-4"}>Tuesday</h1>
           <button onClick={toggleModalTuesday} className={(restTuesday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
@@ -570,7 +647,7 @@ export default function AddWorkout() {
               <IoIosCheckmarkCircle size={40} />
             </button>
             <button onClick={toggleRestTuesday} className= {(restTuesday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
-              Rest Day
+            {displayRestTuesday()}
             </button>
         </article>
 
@@ -594,7 +671,7 @@ export default function AddWorkout() {
 
         {/* WEDNESDAY SECTION */}
         <article className="flex mb-10">
-        <h1 className={(restWednesday ? "line-through" : "") + " text-4xl mr-4"}>Wednesday</h1>
+        <h1 className={(restWednesday ? "text-opacity-10" : "") + " text-black text-4xl mr-4"}>Wednesday</h1>
           <button onClick={toggleModalWednesday} className={(restWednesday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
@@ -665,7 +742,7 @@ export default function AddWorkout() {
               <IoIosCheckmarkCircle size={40} />
             </button>
             <button onClick={toggleRestWednesday} className= {(restWednesday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
-              Rest Day
+            {displayRestWednesday()}
             </button>
         </article>
 
@@ -689,7 +766,7 @@ export default function AddWorkout() {
 
         {/* THURSDAY SECTION */}
         <article className="flex mb-10">
-        <h1 className={(restThursday ? "line-through" : "") + " text-4xl mr-4"}>Thursday</h1>
+        <h1 className={(restThursday ? "text-opacity-10" : "") + " text-black text-4xl mr-4"}>Thursday</h1>
           <button onClick={toggleModalThursday} className={(restThursday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
@@ -760,7 +837,7 @@ export default function AddWorkout() {
               <IoIosCheckmarkCircle size={40} />
             </button>
             <button onClick={toggleRestThursday} className= {(restThursday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
-              Rest Day
+            {displayRestThursday()}
             </button>
         </article>
 
@@ -784,7 +861,7 @@ export default function AddWorkout() {
 
         {/* FRIDAY SECTION */}
         <article className="flex mb-10">
-        <h1 className={(restFriday ? "line-through" : "") + " text-4xl mr-4"}>Friday</h1>
+        <h1 className={(restFriday ? "text-opacity-10" : "") + " text-black text-4xl mr-4"}>Friday</h1>
           <button onClick={toggleModalFriday} className={(restFriday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
@@ -855,7 +932,7 @@ export default function AddWorkout() {
               <IoIosCheckmarkCircle size={40} />
             </button>
             <button onClick={toggleRestFriday} className= {(restFriday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
-              Rest Day
+            {displayRestFriday()}
             </button>
         </article>
 
@@ -879,7 +956,7 @@ export default function AddWorkout() {
 
         {/* SATURDAY SECTION */}
         <article className="flex mb-10">
-        <h1 className={(restSaturday ? "line-through" : "") + " text-4xl mr-4"}>Saturday</h1>
+        <h1 className={(restSaturday ? "text-opacity-10" : "") + " text-black text-4xl mr-4"}>Saturday</h1>
           <button onClick={toggleModalSaturday} className={(restSaturday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
@@ -950,7 +1027,7 @@ export default function AddWorkout() {
               <IoIosCheckmarkCircle size={40} />
             </button>
             <button onClick={toggleRestSaturday} className= {(restSaturday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
-              Rest Day
+            {displayRestSaturday()}
             </button>
         </article>
 
@@ -974,7 +1051,7 @@ export default function AddWorkout() {
 
         {/* SUNDAY SECTION */}
         <article className="flex mb-10">
-        <h1 className={(restSunday ? "line-through" : "") + " text-4xl mr-4"}>Sunday</h1>
+        <h1 className={(restSunday ? "text-opacity-10" : "") + " text-black text-4xl mr-4"}>Sunday</h1>
           <button onClick={toggleModalSunday} className={(restSunday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
@@ -1045,7 +1122,7 @@ export default function AddWorkout() {
               <IoIosCheckmarkCircle size={40} />
             </button>
             <button onClick={toggleRestSunday} className= {(restSunday ? "bg-red-500" : "bg-indigo-500") + " px-4 rounded-full ml-1 text-lg text-white"}>
-              Rest Day
+            {displayRestSunday()}
             </button>
         </article>
 
