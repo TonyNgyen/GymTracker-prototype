@@ -2,7 +2,7 @@ import WorkoutList from "@/components/WorkoutList";
 import WorkoutScheduleList from "@/components/WorkoutScheduleList";
 import Link from "next/link";
 import ScheduleSelect from "@/components/ScheduleSelect";
-import DayDisplay from "@/components/DayDisplay"
+import DayDisplay from "@/components/DayDisplay";
 
 export default async function Home() {
   const weekday = [

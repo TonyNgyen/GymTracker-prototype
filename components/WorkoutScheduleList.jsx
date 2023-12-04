@@ -21,7 +21,8 @@ const getSchedules = async () => {
   let data = await getWorkoutSchedule();
   let workoutSchedules = {};
   for (let i = 0; i < data["workoutSchedule"].length; i++) {
-    workoutSchedules[data["workoutSchedule"][i]["title"]] = data["workoutSchedule"][i]["workouts"];
+    workoutSchedules[data["workoutSchedule"][i]["title"]] =
+      data["workoutSchedule"][i]["workouts"];
   }
   return workoutSchedules;
 };

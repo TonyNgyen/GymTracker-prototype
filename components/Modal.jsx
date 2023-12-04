@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "@/public/css/modal.css"
+import "@/public/css/modal.css";
 
 export default function Modal() {
   const [modal, setModal] = useState(false);
@@ -7,9 +7,9 @@ export default function Modal() {
     setModal(!modal);
   };
   if (modal) {
-    document.body.classList.add("active-modal")
+    document.body.classList.add("active-modal");
   } else {
-    document.body.classList.remove("active-modal")
+    document.body.classList.remove("active-modal");
   }
   return (
     <div>

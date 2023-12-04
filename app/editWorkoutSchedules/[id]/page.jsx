@@ -3,9 +3,12 @@ import React from "react";
 
 const getWorkoutScheduleById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/workoutSchedules/${id}`, {
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `http://localhost:3000/api/workoutSchedules/${id}`,
+      {
+        cache: "no-store",
+      }
+    );
 
     if (!res.ok) {
       throw new Error("Failed to fetch workout schedule");
