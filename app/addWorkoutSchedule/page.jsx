@@ -481,7 +481,7 @@ export default function AddWorkout() {
       {/* MONDAY SECTION */}
       <main className="grid place-items-center">
         <article className="flex mb-10">
-          <h1 className={(restMonday ? "text-opacity-10" : "") + " text-black text-black text-4xl mr-4"}>Monday</h1>
+          <h1 className={(restMonday ? "text-opacity-10" : "") + "  text-black text-4xl mr-4"}>Monday</h1>
             <button onClick={toggleModalMonday} className={(restMonday ? "text-indigo-200" : "text-indigo-500")}>
               <IoIosAddCircle size={40} />
             </button>
