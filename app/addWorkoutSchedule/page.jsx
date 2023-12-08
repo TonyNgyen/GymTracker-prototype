@@ -473,6 +473,7 @@ export default function AddWorkout() {
           {modalMonday && (
             <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
               <form>
+              <section className="mb-4">
                 <input
                   onChange={(e) => {
                     setMondayName(e.target.value);
@@ -510,8 +511,9 @@ export default function AddWorkout() {
                 >
                   Add Workout Day
                 </button>
+                </section>
                 {mondayWorkouts.map((workout) => (
-                  <article className="flex text-3xl bg-blue-400 py-4 px-4 justify-evenly">
+                  <article className="flex text-3xl bg-indigo-200 py-4 px-4 justify-evenly mb-4 border-indigo-500 border-4 rounded-lg">
                     <h1>{workout.name}</h1>
                     <h1>{workout.sets}</h1>
                     <h1>{workout.reps}</h1>
