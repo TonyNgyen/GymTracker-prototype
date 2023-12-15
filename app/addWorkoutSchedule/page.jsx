@@ -473,47 +473,47 @@ export default function AddWorkout() {
           {modalMonday && (
             <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
               <form>
-              <section className="mb-4">
-                <input
-                  onChange={(e) => {
-                    setMondayName(e.target.value);
-                  }}
-                  value={mondayName}
-                  type="text"
-                  placeholder="Workout"
-                  className="border border-slate-500 px-8 py-2 "
-                />
+                <section className="mb-4">
+                  <input
+                    onChange={(e) => {
+                      setMondayName(e.target.value);
+                    }}
+                    value={mondayName}
+                    type="text"
+                    placeholder="Workout"
+                    className="border border-slate-500 px-8 py-2 text-2xl"
+                  />
 
-                <input
-                  onChange={(e) => {
-                    setMondaySets(e.target.value);
-                  }}
-                  value={mondaySets}
-                  type="number"
-                  placeholder="Sets"
-                  className="border border-slate-500 px-8 py-2 "
-                />
+                  <input
+                    onChange={(e) => {
+                      setMondaySets(e.target.value);
+                    }}
+                    value={mondaySets}
+                    type="number"
+                    placeholder="Sets"
+                    className="border border-slate-500 px-8 py-2 mx-4 text-2xl"
+                  />
 
-                <input
-                  onChange={(e) => {
-                    setMondayReps(e.target.value);
-                  }}
-                  value={mondayReps}
-                  type="number"
-                  placeholder="Reps"
-                  className="border border-slate-500 px-8 py-2 "
-                />
+                  <input
+                    onChange={(e) => {
+                      setMondayReps(e.target.value);
+                    }}
+                    value={mondayReps}
+                    type="number"
+                    placeholder="Reps"
+                    className="border border-slate-500 px-8 py-2 mr-4 text-2xl"
+                  />
 
-                <button
-                  type="submit"
-                  className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
-                  onClick={setDayFunctions["Monday"]}
-                >
-                  Add Workout Day
-                </button>
+                  <button
+                    type="submit"
+                    className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
+                    onClick={setDayFunctions["Monday"]}
+                  >
+                    Add Workout Day
+                  </button>
                 </section>
                 {mondayWorkouts.map((workout) => (
-                  <article className="flex text-3xl bg-indigo-200 py-4 px-4 justify-evenly mb-4 border-indigo-500 border-4 rounded-lg">
+                  <article className="grid grid-cols-4 justify-items-center text-3xl bg-indigo-200 py-4 px-4 mb-4 border-indigo-400 border-2 rounded-lg">
                     <h1>{workout.name}</h1>
                     <h1>{workout.sets}</h1>
                     <h1>{workout.reps}</h1>
@@ -1281,4 +1281,22 @@ export default function AddWorkout() {
       </form>
     </>
   );
+}
+
+{
+  /* <article className="flex text-3xl bg-indigo-200 py-4 px-4 justify-evenly mb-4 border-indigo-400 border-2 rounded-lg">
+                    <h1>{workout.name}</h1>
+                    <h1>{workout.sets}</h1>
+                    <h1>{workout.reps}</h1>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setMondayWorkouts(
+                          mondayWorkouts.filter((w) => w.id !== workout.id)
+                        );
+                      }}
+                    >
+                      <HiOutlineTrash size={40} />
+                    </button>
+                  </article> */
 }
