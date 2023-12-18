@@ -16,8 +16,9 @@ export default function AddWorkout() {
   const [mondayName, setMondayName] = useState("");
   const [mondaySets, setMondaySets] = useState("");
   const [mondayReps, setMondayReps] = useState("");
-  const [mondayWorkouts, setMondayWorkouts] = useState([]);
   const [restMonday, setRestMonday] = useState(false);
+  const [mondayWorkouts, setMondayWorkouts] = useState([]);
+
   const toggleRestMonday = () => {
     setRestMonday(!restMonday);
   };
@@ -27,6 +28,11 @@ export default function AddWorkout() {
     } else {
       return "Workout Day";
     }
+  };
+
+  const [restModalMonday, setRestModalMonday] = useState(false);
+  const toggleRestModalMonday = () => {
+    setRestModalMonday(!restModalMonday);
   };
 
   const [modalMonday, setModalMonday] = useState(false);
@@ -379,16 +385,6 @@ export default function AddWorkout() {
     console.log(workouts);
   };
 
-  const setDayFunctions = {
-    Monday: saveMonday,
-    Tuesday: saveTuesday,
-    Wednesday: saveWednesday,
-    Thursday: saveThursday,
-    Friday: saveFriday,
-    Saturday: saveSaturday,
-    Sunday: saveSunday,
-  };
-
   const handleNameSubmit = (e) => {
     e.preventDefault();
     setTitle(name);
@@ -466,14 +462,33 @@ export default function AddWorkout() {
           </h1>
           <button
             onClick={toggleModalMonday}
-            className={restMonday ? "text-indigo-200" : "text-indigo-500"}
+            className={restMonday ? "hidden" : "text-indigo-500"}
           >
             <IoIosAddCircle size={40} />
           </button>
+          <button
+            onClick={toggleRestModalMonday}
+            className={restMonday ? "text-indigo-200" : "hidden"}
+          >
+            <IoIosAddCircle size={40} />
+          </button>
+          {restModalMonday && (
+            <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
+            <article className="bg-white p-8 w-1/2 rounded-md">
+              <h1 className="text-2xl leading-9 mb-4">
+                Unable to add workout since Monday is a rest day. Please change
+                Monday to a workout day to add workouts.
+              </h1>
+              <button onClick={toggleRestModalMonday} className="bg-red-400 py-2 px-4 rounded-xl text-xl">
+                <h1>Close</h1>
+              </button>
+              </article>
+            </div>
+          )}
           {modalMonday && (
             <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
-              <form>
-                <section className="mb-4">
+              <form className="bg-white p-10 rounded-md">
+                <section className="mb-7">
                   <input
                     onChange={(e) => {
                       setMondayName(e.target.value);
@@ -481,7 +496,7 @@ export default function AddWorkout() {
                     value={mondayName}
                     type="text"
                     placeholder="Workout"
-                    className="border border-slate-500 px-8 py-2 text-2xl"
+                    className="border-b border-slate-500 px-8 py-2 text-2xl"
                   />
 
                   <input
@@ -491,7 +506,7 @@ export default function AddWorkout() {
                     value={mondaySets}
                     type="number"
                     placeholder="Sets"
-                    className="border border-slate-500 px-8 py-2 mx-4 text-2xl"
+                    className="border-b border-slate-500 px-8 py-2 mx-4 text-2xl"
                   />
 
                   <input
@@ -501,19 +516,20 @@ export default function AddWorkout() {
                     value={mondayReps}
                     type="number"
                     placeholder="Reps"
-                    className="border border-slate-500 px-8 py-2 mr-4 text-2xl"
+                    className="border-b border-slate-500 px-8 py-2 mr-4 text-2xl"
                   />
 
                   <button
                     type="submit"
                     className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
-                    onClick={setDayFunctions["Monday"]}
+                    onClick={saveMonday}
                   >
                     Add Workout Day
                   </button>
                 </section>
+                <section className="mb-7">
                 {mondayWorkouts.map((workout) => (
-                  <article className="grid grid-cols-4 justify-items-center text-3xl bg-indigo-200 py-4 px-4 mb-4 border-indigo-400 border-2 rounded-lg">
+                  <article className="grid grid-cols-4 justify-items-center text-3xl bg-indigo-200 py-4 px-4 mb-4 rounded-lg">
                     <h1>{workout.name}</h1>
                     <h1>{workout.sets}</h1>
                     <h1>{workout.reps}</h1>
@@ -529,7 +545,8 @@ export default function AddWorkout() {
                     </button>
                   </article>
                 ))}
-                <button onClick={toggleModalMonday}>
+                </section>
+                <button onClick={toggleModalMonday} className="bg-red-400 py-2 px-4 rounded-xl text-xl">
                   <h1>Close</h1>
                 </button>
               </form>
@@ -622,7 +639,7 @@ export default function AddWorkout() {
                 <button
                   type="submit"
                   className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
-                  onClick={setDayFunctions["Tuesday"]}
+                  onClick={saveTuesday}
                 >
                   Add Workout Day
                 </button>
@@ -736,7 +753,7 @@ export default function AddWorkout() {
                 <button
                   type="submit"
                   className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
-                  onClick={setDayFunctions["Wednesday"]}
+                  onClick={saveWednesday}
                 >
                   Add Workout Day
                 </button>
@@ -850,7 +867,7 @@ export default function AddWorkout() {
                 <button
                   type="submit"
                   className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
-                  onClick={setDayFunctions["Thursday"]}
+                  onClick={saveThursday}
                 >
                   Add Workout Day
                 </button>
@@ -964,7 +981,7 @@ export default function AddWorkout() {
                 <button
                   type="submit"
                   className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
-                  onClick={setDayFunctions["Friday"]}
+                  onClick={saveFriday}
                 >
                   Add Workout Day
                 </button>
@@ -1078,7 +1095,7 @@ export default function AddWorkout() {
                 <button
                   type="submit"
                   className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
-                  onClick={setDayFunctions["Saturday"]}
+                  onClick={saveSaturday}
                 >
                   Add Workout Day
                 </button>
@@ -1192,7 +1209,7 @@ export default function AddWorkout() {
                 <button
                   type="submit"
                   className="bg-green-600 font-bold text-white py-2 px-3 w-fit"
-                  onClick={setDayFunctions["Sunday"]}
+                  onClick={saveSunday}
                 >
                   Add Workout Day
                 </button>
