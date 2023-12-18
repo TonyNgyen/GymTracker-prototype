@@ -62,11 +62,11 @@ export default function AddWorkout() {
 
   const confirmWorkoutMonday = (e) => {
     e.preventDefault();
-    if (!mondayWorkouts) {
+    if (mondayWorkouts.length == 0 && !restMonday) {
       alert("Workouts are required");
       return;
     }
-    setWorkouts({ ...workouts, Monday: mondayWorkouts });
+    setWorkouts({ ...workouts, Monday: {rest: restMonday, workouts: mondayWorkouts} });
   };
 
   const debugMonday = (e) => {
@@ -78,8 +78,9 @@ export default function AddWorkout() {
   const [tuesdayName, setTuesdayName] = useState("");
   const [tuesdaySets, setTuesdaySets] = useState("");
   const [tuesdayReps, setTuesdayReps] = useState("");
-  const [tuesdayWorkouts, setTuesdayWorkouts] = useState([]);
   const [restTuesday, setRestTuesday] = useState(false);
+  const [tuesdayWorkouts, setTuesdayWorkouts] = useState([]);
+
   const toggleRestTuesday = () => {
     setRestTuesday(!restTuesday);
   };
@@ -89,6 +90,11 @@ export default function AddWorkout() {
     } else {
       return "Workout Day";
     }
+  };
+
+  const [restModalTuesday, setRestModalTuesday] = useState(false);
+  const toggleRestModalTuesday = () => {
+    setRestModalTuesday(!restModalTuesday);
   };
 
   const [modalTuesday, setModalTuesday] = useState(false);
@@ -118,19 +124,20 @@ export default function AddWorkout() {
 
   const confirmWorkoutTuesday = (e) => {
     e.preventDefault();
-    if (!tuesdayWorkouts) {
+    if (tuesdayWorkouts.length == 0 && !restTuesday) {
       alert("Workouts are required");
       return;
     }
-    setWorkouts({ ...workouts, Tuesday: tuesdayWorkouts });
+    setWorkouts({ ...workouts, Tuesday: {rest: restTuesday, workouts: tuesdayWorkouts} });
   };
 
   // VARIABLES AND FUNCTIONS USED FOR WEDNESDAY
   const [wednesdayName, setWednesdayName] = useState("");
   const [wednesdaySets, setWednesdaySets] = useState("");
   const [wednesdayReps, setWednesdayReps] = useState("");
-  const [wednesdayWorkouts, setWednesdayWorkouts] = useState([]);
   const [restWednesday, setRestWednesday] = useState(false);
+  const [wednesdayWorkouts, setWednesdayWorkouts] = useState([]);
+
   const toggleRestWednesday = () => {
     setRestWednesday(!restWednesday);
   };
@@ -140,6 +147,11 @@ export default function AddWorkout() {
     } else {
       return "Workout Day";
     }
+  };
+
+  const [restModalWednesday, setRestModalWednesday] = useState(false);
+  const toggleRestModalWednesday = () => {
+    setRestModalWednesday(!restModalWednesday);
   };
 
   const [modalWednesday, setModalWednesday] = useState(false);
@@ -169,19 +181,20 @@ export default function AddWorkout() {
 
   const confirmWorkoutWednesday = (e) => {
     e.preventDefault();
-    if (!wednesdayWorkouts) {
+    if (wednesdayWorkouts.length == 0 && !restWednesday) {
       alert("Workouts are required");
       return;
     }
-    setWorkouts({ ...workouts, Wednesday: wednesdayWorkouts });
+    setWorkouts({ ...workouts, Wednesday: {rest: restWednesday, workouts: wednesdayWorkouts} });
   };
 
   // VARIABLES AND FUNCTIONS USED FOR THURSDAY
   const [thursdayName, setThursdayName] = useState("");
   const [thursdaySets, setThursdaySets] = useState("");
   const [thursdayReps, setThursdayReps] = useState("");
-  const [thursdayWorkouts, setThursdayWorkouts] = useState([]);
   const [restThursday, setRestThursday] = useState(false);
+  const [thursdayWorkouts, setThursdayWorkouts] = useState([]);
+
   const toggleRestThursday = () => {
     setRestThursday(!restThursday);
   };
@@ -191,6 +204,11 @@ export default function AddWorkout() {
     } else {
       return "Workout Day";
     }
+  };
+
+  const [restModalThursday, setRestModalThursday] = useState(false);
+  const toggleRestModalThursday = () => {
+    setRestModalThursday(!restModalThursday);
   };
 
   const [modalThursday, setModalThursday] = useState(false);
@@ -220,19 +238,20 @@ export default function AddWorkout() {
 
   const confirmWorkoutThursday = (e) => {
     e.preventDefault();
-    if (!thursdayWorkouts) {
+    if (thursdayWorkouts.length == 0 && !restThursday) {
       alert("Workouts are required");
       return;
     }
-    setWorkouts({ ...workouts, Thursday: thursdayWorkouts });
+    setWorkouts({ ...workouts, Thursday: {rest: restThursday, workouts: thursdayWorkouts} });
   };
 
   // VARIABLES AND FUNCTIONS USED FOR FRIDAY
   const [fridayName, setFridayName] = useState("");
   const [fridaySets, setFridaySets] = useState("");
   const [fridayReps, setFridayReps] = useState("");
-  const [fridayWorkouts, setFridayWorkouts] = useState([]);
   const [restFriday, setRestFriday] = useState(false);
+  const [fridayWorkouts, setFridayWorkouts] = useState([]);
+
   const toggleRestFriday = () => {
     setRestFriday(!restFriday);
   };
@@ -242,6 +261,11 @@ export default function AddWorkout() {
     } else {
       return "Workout Day";
     }
+  };
+
+  const [restModalFriday, setRestModalFriday] = useState(false);
+  const toggleRestModalFriday = () => {
+    setRestModalFriday(!restModalFriday);
   };
 
   const [modalFriday, setModalFriday] = useState(false);
@@ -271,19 +295,20 @@ export default function AddWorkout() {
 
   const confirmWorkoutFriday = (e) => {
     e.preventDefault();
-    if (!fridayWorkouts) {
+    if (fridayWorkouts.length == 0 && !restFriday) {
       alert("Workouts are required");
       return;
     }
-    setWorkouts({ ...workouts, Friday: fridayWorkouts });
+    setWorkouts({ ...workouts, Friday: {rest: restFriday, workouts: fridayWorkouts} });
   };
 
   // VARIABLES AND FUNCTIONS USED FOR SATURDAY
   const [saturdayName, setSaturdayName] = useState("");
   const [saturdaySets, setSaturdaySets] = useState("");
   const [saturdayReps, setSaturdayReps] = useState("");
-  const [saturdayWorkouts, setSaturdayWorkouts] = useState([]);
   const [restSaturday, setRestSaturday] = useState(false);
+  const [saturdayWorkouts, setSaturdayWorkouts] = useState([]);
+
   const toggleRestSaturday = () => {
     setRestSaturday(!restSaturday);
   };
@@ -293,6 +318,11 @@ export default function AddWorkout() {
     } else {
       return "Workout Day";
     }
+  };
+
+  const [restModalSaturday, setRestModalSaturday] = useState(false);
+  const toggleRestModalSaturday = () => {
+    setRestModalSaturday(!restModalSaturday);
   };
 
   const [modalSaturday, setModalSaturday] = useState(false);
@@ -322,19 +352,20 @@ export default function AddWorkout() {
 
   const confirmWorkoutSaturday = (e) => {
     e.preventDefault();
-    if (!saturdayWorkouts) {
+    if (saturdayWorkouts.length == 0 && !restSaturday) {
       alert("Workouts are required");
       return;
     }
-    setWorkouts({ ...workouts, Saturday: saturdayWorkouts });
+    setWorkouts({ ...workouts, Saturday: {rest: restSaturday, workouts: saturdayWorkouts} });
   };
 
   // VARIABLES AND FUNCTIONS USED FOR SUNDAY
   const [sundayName, setSundayName] = useState("");
   const [sundaySets, setSundaySets] = useState("");
   const [sundayReps, setSundayReps] = useState("");
-  const [sundayWorkouts, setSundayWorkouts] = useState([]);
   const [restSunday, setRestSunday] = useState(false);
+  const [sundayWorkouts, setSundayWorkouts] = useState([]);
+
   const toggleRestSunday = () => {
     setRestSunday(!restSunday);
   };
@@ -344,6 +375,11 @@ export default function AddWorkout() {
     } else {
       return "Workout Day";
     }
+  };
+
+  const [restModalSunday, setRestModalSunday] = useState(false);
+  const toggleRestModalSunday = () => {
+    setRestModalSunday(!restModalSunday);
   };
 
   const [modalSunday, setModalSunday] = useState(false);
@@ -373,11 +409,11 @@ export default function AddWorkout() {
 
   const confirmWorkoutSunday = (e) => {
     e.preventDefault();
-    if (!sundayWorkouts) {
+    if (sundayWorkouts.length == 0 && !restSunday) {
       alert("Workouts are required");
       return;
     }
-    setWorkouts({ ...workouts, Sunday: sundayWorkouts });
+    setWorkouts({ ...workouts, Sunday: {rest: restSunday, workouts: sundayWorkouts} });
   };
 
   const debug = (e) => {
@@ -554,7 +590,7 @@ export default function AddWorkout() {
           )}
           <button
             onClick={confirmWorkoutMonday}
-            className={restMonday ? "text-indigo-200" : "text-indigo-500"}
+            className={"text-indigo-500"}
           >
             <IoIosCheckmarkCircle size={40} />
           </button>
@@ -1272,13 +1308,13 @@ export default function AddWorkout() {
         ))}
       </main>
 
-      {/* <button
+      <button
         onClick={debug}
         type="submit"
         className="bg-red-400 font-bold text-white py-3 px-6 w-fit"
       >
         Debug Workouts
-      </button> */}
+      </button>
 
       {/* <button
         onClick={debugMonday}

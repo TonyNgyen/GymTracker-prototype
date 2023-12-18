@@ -1,5 +1,6 @@
 import React from "react";
 import ScheduleSelect from "./ScheduleSelect";
+import ScheduleSelectTest from "./ScheduleSelectTest";
 
 const getWorkoutSchedule = async () => {
   try {
@@ -31,7 +32,7 @@ export default async function WorkoutScheduleList({ day }) {
   const workoutSchedules = await getSchedules();
   return (
     <>
-      <ScheduleSelect schedule={workoutSchedules} day={day} />
+      <ScheduleSelectTest schedule={workoutSchedules} day={day} />
     </>
   );
 }
