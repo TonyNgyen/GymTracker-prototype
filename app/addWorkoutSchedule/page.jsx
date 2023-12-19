@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { HiOutlineTrash } from "react-icons/hi";
 import "@/public/css/modal.css";
-import { IoIosAddCircle, IoIosCheckmarkCircle } from "react-icons/io";
-import ReactDOM from "react-dom";
 
 export default function AddWorkout() {
   const router = useRouter();

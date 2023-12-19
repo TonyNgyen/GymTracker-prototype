@@ -30,9 +30,13 @@ export default async function Home() {
         >
           Add workout schedule
         </Link>
+        <Link
+          href={"/login"}
+          className="bg-indigo-200 py-4 px-4 rounded-xl inline-block ml-3 text-lg"
+        >
+          Login
+        </Link>
       </section>
-      {/* <ScheduleSelect /> */}
-      {/* <WorkoutList /> */}
       <WorkoutScheduleList day={weekday[day]} />
     </>
   );
