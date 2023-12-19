@@ -531,35 +531,39 @@ export default function AddWorkout() {
       {/* MONDAY SECTION */}
       <main className="grid place-items-center">
         <section className="bg-gray-200 w-1/2 p-4 drop-shadow-xl shadow-gray-300 rounded-lg mb-14">
-          <article className="flex mb-7">
-            <h1 className={" text-black text-4xl mr-4"}>Monday</h1>
-            <button
-              onClick={toggleRestMonday}
-              className={
-                (restMonday ? "bg-red-400" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              {displayRestMonday()}
-            </button>
-            <button
-              onClick={toggleModalMonday}
-              className={
-                (restMonday ? "hidden" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
-            <button
-              onClick={toggleRestModalMonday}
-              className={
-                (restMonday ? "bg-indigo-200" : "hidden") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
+          <article className="grid grid-cols-2 mb-7">
+            <article className="flex">
+              <h1 className={" text-black text-4xl mr-4"}>Monday</h1>
+              <button
+                onClick={toggleRestMonday}
+                className={
+                  (restMonday ? "bg-red-400" : "bg-indigo-500") +
+                  " px-4 rounded-full mr-2 text-lg text-white"
+                }
+              >
+                {displayRestMonday()}
+              </button>
+            </article>
+            <article className="flex justify-end">
+              <button
+                onClick={toggleModalMonday}
+                className={
+                  (restMonday ? "hidden" : "bg-indigo-500") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+              <button
+                onClick={toggleRestModalMonday}
+                className={
+                  (restMonday ? "bg-indigo-200" : "hidden") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+            </article>
           </article>
 
           <article className={(restMonday ? "blur-sm" : "") + " mb-7"}>
@@ -688,35 +692,39 @@ export default function AddWorkout() {
 
         {/* TUESDAY SECTION */}
         <section className="bg-gray-200 w-1/2 p-4 drop-shadow-xl shadow-gray-300 rounded-lg mb-14">
-          <article className="flex mb-7">
-            <h1 className={" text-black text-4xl mr-4"}>Tuesday</h1>
-            <button
-              onClick={toggleRestTuesday}
-              className={
-                (restTuesday ? "bg-red-400" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              {displayRestTuesday()}
-            </button>
-            <button
-              onClick={toggleModalTuesday}
-              className={
-                (restTuesday ? "hidden" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
-            <button
-              onClick={toggleRestModalTuesday}
-              className={
-                (restTuesday ? "bg-indigo-200" : "hidden") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
+        <article className="grid grid-cols-2 mb-7">
+            <article className="flex">
+              <h1 className={" text-black text-4xl mr-4"}>Tuesday</h1>
+              <button
+                onClick={toggleRestTuesday}
+                className={
+                  (restTuesday ? "bg-red-400" : "bg-indigo-500") +
+                  " px-4 rounded-full mr-2 text-lg text-white"
+                }
+              >
+                {displayRestTuesday()}
+              </button>
+            </article>
+            <article className="flex justify-end">
+              <button
+                onClick={toggleModalTuesday}
+                className={
+                  (restTuesday ? "hidden" : "bg-indigo-500") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+              <button
+                onClick={toggleRestModalTuesday}
+                className={
+                  (restTuesday ? "bg-indigo-200" : "hidden") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+            </article>
           </article>
 
           <article className={(restTuesday ? "blur-sm" : "") + " mb-7"}>
@@ -845,35 +853,39 @@ export default function AddWorkout() {
 
         {/* WEDNESDAY SECTION */}
         <section className="bg-gray-200 w-1/2 p-4 drop-shadow-xl shadow-gray-300 rounded-lg mb-14">
-          <article className="flex mb-7">
-            <h1 className={" text-black text-4xl mr-4"}>Wednesday</h1>
-            <button
-              onClick={toggleRestWednesday}
-              className={
-                (restWednesday ? "bg-red-400" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              {displayRestWednesday()}
-            </button>
-            <button
-              onClick={toggleModalWednesday}
-              className={
-                (restWednesday ? "hidden" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
-            <button
-              onClick={toggleRestModalWednesday}
-              className={
-                (restWednesday ? "bg-indigo-200" : "hidden") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
+        <article className="grid grid-cols-2 mb-7">
+            <article className="flex">
+              <h1 className={" text-black text-4xl mr-4"}>Wednesday</h1>
+              <button
+                onClick={toggleRestWednesday}
+                className={
+                  (restWednesday ? "bg-red-400" : "bg-indigo-500") +
+                  " px-4 rounded-full mr-2 text-lg text-white"
+                }
+              >
+                {displayRestWednesday()}
+              </button>
+            </article>
+            <article className="flex justify-end">
+              <button
+                onClick={toggleModalWednesday}
+                className={
+                  (restWednesday ? "hidden" : "bg-indigo-500") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+              <button
+                onClick={toggleRestModalWednesday}
+                className={
+                  (restWednesday ? "bg-indigo-200" : "hidden") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+            </article>
           </article>
 
           <article className={(restWednesday ? "blur-sm" : "") + " mb-7"}>
@@ -917,8 +929,8 @@ export default function AddWorkout() {
           <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
             <article className="bg-white p-8 w-1/2 rounded-md">
               <h1 className="text-2xl leading-9 mb-4">
-                Unable to add workout since Wednesday is a rest day. Please change
-                Wednesday to a workout day to add workouts.
+                Unable to add workout since Wednesday is a rest day. Please
+                change Wednesday to a workout day to add workouts.
               </h1>
               <button
                 onClick={toggleRestModalWednesday}
@@ -1002,35 +1014,39 @@ export default function AddWorkout() {
 
         {/* THURSDAY SECTION */}
         <section className="bg-gray-200 w-1/2 p-4 drop-shadow-xl shadow-gray-300 rounded-lg mb-14">
-          <article className="flex mb-7">
-            <h1 className={" text-black text-4xl mr-4"}>Thursday</h1>
-            <button
-              onClick={toggleRestThursday}
-              className={
-                (restThursday ? "bg-red-400" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              {displayRestThursday()}
-            </button>
-            <button
-              onClick={toggleModalThursday}
-              className={
-                (restThursday ? "hidden" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
-            <button
-              onClick={toggleRestModalThursday}
-              className={
-                (restThursday ? "bg-indigo-200" : "hidden") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
+        <article className="grid grid-cols-2 mb-7">
+            <article className="flex">
+              <h1 className={" text-black text-4xl mr-4"}>Thursday</h1>
+              <button
+                onClick={toggleRestThursday}
+                className={
+                  (restThursday ? "bg-red-400" : "bg-indigo-500") +
+                  " px-4 rounded-full mr-2 text-lg text-white"
+                }
+              >
+                {displayRestThursday()}
+              </button>
+            </article>
+            <article className="flex justify-end">
+              <button
+                onClick={toggleModalThursday}
+                className={
+                  (restThursday ? "hidden" : "bg-indigo-500") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+              <button
+                onClick={toggleRestModalThursday}
+                className={
+                  (restThursday ? "bg-indigo-200" : "hidden") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+            </article>
           </article>
 
           <article className={(restThursday ? "blur-sm" : "") + " mb-7"}>
@@ -1074,8 +1090,8 @@ export default function AddWorkout() {
           <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
             <article className="bg-white p-8 w-1/2 rounded-md">
               <h1 className="text-2xl leading-9 mb-4">
-                Unable to add workout since Thursday is a rest day. Please change
-                Thursday to a workout day to add workouts.
+                Unable to add workout since Thursday is a rest day. Please
+                change Thursday to a workout day to add workouts.
               </h1>
               <button
                 onClick={toggleRestModalThursday}
@@ -1159,35 +1175,39 @@ export default function AddWorkout() {
 
         {/* FRIDAY SECTION */}
         <section className="bg-gray-200 w-1/2 p-4 drop-shadow-xl shadow-gray-300 rounded-lg mb-14">
-          <article className="flex mb-7">
-            <h1 className={" text-black text-4xl mr-4"}>Friday</h1>
-            <button
-              onClick={toggleRestFriday}
-              className={
-                (restFriday ? "bg-red-400" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              {displayRestFriday()}
-            </button>
-            <button
-              onClick={toggleModalFriday}
-              className={
-                (restFriday ? "hidden" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
-            <button
-              onClick={toggleRestModalFriday}
-              className={
-                (restFriday ? "bg-indigo-200" : "hidden") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
+        <article className="grid grid-cols-2 mb-7">
+            <article className="flex">
+              <h1 className={" text-black text-4xl mr-4"}>Friday</h1>
+              <button
+                onClick={toggleRestFriday}
+                className={
+                  (restFriday ? "bg-red-400" : "bg-indigo-500") +
+                  " px-4 rounded-full mr-2 text-lg text-white"
+                }
+              >
+                {displayRestFriday()}
+              </button>
+            </article>
+            <article className="flex justify-end">
+              <button
+                onClick={toggleModalFriday}
+                className={
+                  (restFriday ? "hidden" : "bg-indigo-500") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+              <button
+                onClick={toggleRestModalFriday}
+                className={
+                  (restFriday ? "bg-indigo-200" : "hidden") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+            </article>
           </article>
 
           <article className={(restFriday ? "blur-sm" : "") + " mb-7"}>
@@ -1316,35 +1336,39 @@ export default function AddWorkout() {
 
         {/* SATURDAY SECTION */}
         <section className="bg-gray-200 w-1/2 p-4 drop-shadow-xl shadow-gray-300 rounded-lg mb-14">
-          <article className="flex mb-7">
-            <h1 className={" text-black text-4xl mr-4"}>Saturday</h1>
-            <button
-              onClick={toggleRestSaturday}
-              className={
-                (restSaturday ? "bg-red-400" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              {displayRestSaturday()}
-            </button>
-            <button
-              onClick={toggleModalSaturday}
-              className={
-                (restSaturday ? "hidden" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
-            <button
-              onClick={toggleRestModalSaturday}
-              className={
-                (restSaturday ? "bg-indigo-200" : "hidden") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
+        <article className="grid grid-cols-2 mb-7">
+            <article className="flex">
+              <h1 className={" text-black text-4xl mr-4"}>Saturday</h1>
+              <button
+                onClick={toggleRestSaturday}
+                className={
+                  (restSaturday ? "bg-red-400" : "bg-indigo-500") +
+                  " px-4 rounded-full mr-2 text-lg text-white"
+                }
+              >
+                {displayRestSaturday()}
+              </button>
+            </article>
+            <article className="flex justify-end">
+              <button
+                onClick={toggleModalSaturday}
+                className={
+                  (restSaturday ? "hidden" : "bg-indigo-500") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+              <button
+                onClick={toggleRestModalSaturday}
+                className={
+                  (restSaturday ? "bg-indigo-200" : "hidden") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+            </article>
           </article>
 
           <article className={(restSaturday ? "blur-sm" : "") + " mb-7"}>
@@ -1388,8 +1412,8 @@ export default function AddWorkout() {
           <div className="justify-center flex fixed w-screen h-screen top-0 left-0 right-0 bottom-0 bg-opacity-40 bg-gray-600 items-center">
             <article className="bg-white p-8 w-1/2 rounded-md">
               <h1 className="text-2xl leading-9 mb-4">
-                Unable to add workout since Saturday is a rest day. Please change
-                Saturday to a workout day to add workouts.
+                Unable to add workout since Saturday is a rest day. Please
+                change Saturday to a workout day to add workouts.
               </h1>
               <button
                 onClick={toggleRestModalSaturday}
@@ -1473,35 +1497,39 @@ export default function AddWorkout() {
 
         {/* SUNDAY SECTION */}
         <section className="bg-gray-200 w-1/2 p-4 drop-shadow-xl shadow-gray-300 rounded-lg mb-14">
-          <article className="flex mb-7">
-            <h1 className={" text-black text-4xl mr-4"}>Sunday</h1>
-            <button
-              onClick={toggleRestSunday}
-              className={
-                (restSunday ? "bg-red-400" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              {displayRestSunday()}
-            </button>
-            <button
-              onClick={toggleModalSunday}
-              className={
-                (restSunday ? "hidden" : "bg-indigo-500") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
-            <button
-              onClick={toggleRestModalSunday}
-              className={
-                (restSunday ? "bg-indigo-200" : "hidden") +
-                " px-4 rounded-full mr-2 text-lg text-white"
-              }
-            >
-              Add Workout
-            </button>
+        <article className="grid grid-cols-2 mb-7">
+            <article className="flex">
+              <h1 className={" text-black text-4xl mr-4"}>Sunday</h1>
+              <button
+                onClick={toggleRestSunday}
+                className={
+                  (restSunday ? "bg-red-400" : "bg-indigo-500") +
+                  " px-4 rounded-full mr-2 text-lg text-white"
+                }
+              >
+                {displayRestSunday()}
+              </button>
+            </article>
+            <article className="flex justify-end">
+              <button
+                onClick={toggleModalSunday}
+                className={
+                  (restSunday ? "hidden" : "bg-indigo-500") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+              <button
+                onClick={toggleRestModalSunday}
+                className={
+                  (restSunday ? "bg-indigo-200" : "hidden") +
+                  " px-4 rounded-full text-lg text-white"
+                }
+              >
+                Add Workout
+              </button>
+            </article>
           </article>
 
           <article className={(restSunday ? "blur-sm" : "") + " mb-7"}>
