@@ -19,12 +19,6 @@ export default async function Home() {
     <>
       <section className="text-center mb-8">
         <Link
-          href={"/addWorkout"}
-          className="bg-indigo-200 py-4 px-4 rounded-xl inline-block mr-3 text-lg"
-        >
-          Add workout
-        </Link>
-        <Link
           href={"/addWorkoutSchedule"}
           className="bg-indigo-200 py-4 px-4 rounded-xl inline-block ml-3 text-lg"
         >
