@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "mongodb": "^6.2.0",
     "mongoose": "^7.6.3",
     "next": "^14.0.5-canary.17",
+    "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.11.0"
