@@ -1,10 +1,17 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 
-export default function LoginForm() {
+export default function RegisterForm() {
   return (
     <div>
       <form>
+      <input
+          type="text"
+          name="fullname"
+          id="1"
+          placeholder="Full Name"
+          className="border border-black"
+        />
         <input
           type="text"
           name="email"
@@ -19,11 +26,11 @@ export default function LoginForm() {
           placeholder="Password"
           className="border border-black"
         />
-        <button className="bg-green-400 px-6 py-2">Login</button>
+        <button className="bg-green-400 px-6 py-2">Register</button>
         <div className="bg-red-400 px-6 py-2 w-fit">Erorr Message</div>
       </form>
-      <Link href={"/register"}>
-        Don't have an account? <span className="underline ">Register</span>
+      <Link href={"/login"}>
+        Already have an? <span className="underline ">Login</span>
       </Link>
     </div>
   );
