@@ -6,5 +6,3 @@ export default function Dashboard() {
     <UserInfo />
   )
 }
-
-//https://youtu.be/PEMfsqZ2-As?t=1005

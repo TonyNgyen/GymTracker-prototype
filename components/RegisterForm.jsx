@@ -70,5 +70,3 @@ export default function RegisterForm() {
     </div>
   );
 }
-
-//https://youtu.be/PEMfsqZ2-As?t=1897
