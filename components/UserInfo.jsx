@@ -3,29 +3,12 @@
 import React from "react";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
+import connectMongoDB from "@/libs/mongodb";
+import User from "@/models/user";
 
 export default function UserInfo() {
 
   const  {data:session} = useSession();
-
-  const getWorkoutById = async (id) => {
-    try {
-      const res = await fetch(`http://localhost:3000/api/workouts/${id}`, {
-        cache: "no-store",
-      });
-  
-      if (!res.ok) {
-        throw new Error("Failed to fetch workout");
-      }
-  
-      return res.json();
-    } catch (error) {
-      console.log("Error loading workout: ", error);
-    }
-  };
-
-  await connectMongoDB();
-  const user = await User.findOne({email});
 
   return (
     <div>
