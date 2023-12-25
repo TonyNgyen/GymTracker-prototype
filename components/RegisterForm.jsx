@@ -8,6 +8,7 @@ export default function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const workouts = { workouts: 0 };
 
   const router = useRouter();
 
@@ -39,7 +40,7 @@ export default function RegisterForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, email, password, workouts }),
       });
 
       if (res.ok) {
