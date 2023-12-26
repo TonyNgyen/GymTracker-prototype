@@ -3,12 +3,42 @@
 import React from "react";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import connectMongoDB from "@/libs/mongodb";
-import User from "@/models/user";
+import WorkoutScheduleList from "./WorkoutScheduleList";
 
 export default function UserInfo() {
 
   const  {data:session} = useSession();
+  const day = new Date().getDay();
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const email = session?.user?.email;
+
+  const getWorkoutsByEmail = async () => {
+    try {
+      const workouts = await fetch("api/workoutSchedules", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const { user } = await workouts.json();
+      console.log(user)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  getWorkoutsByEmail();
 
   return (
     <div>

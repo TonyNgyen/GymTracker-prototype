@@ -15,8 +15,6 @@ const userSchema = new Schema(
       required: true,
     },
     workouts: {
-      type: Object,
-      required: true,
     },
   },
   {

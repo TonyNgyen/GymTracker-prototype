@@ -8,7 +8,7 @@ export default function RegisterForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const workouts = { workouts: 0 };
+  const workouts = 0;
 
   const router = useRouter();
 
@@ -68,7 +68,7 @@ export default function RegisterForm() {
         <input
           type="text"
           name="email"
-          id="1"
+          id="2"
           placeholder="Email"
           className="border border-black"
           onChange={(e) => setEmail(e.target.value)}
@@ -76,7 +76,7 @@ export default function RegisterForm() {
         <input
           type="password"
           name="text"
-          id="2"
+          id="3"
           placeholder="Password"
           className="border border-black"
           onChange={(e) => setPassword(e.target.value)}
