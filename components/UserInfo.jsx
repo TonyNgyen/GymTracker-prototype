@@ -3,7 +3,7 @@
 import React from "react";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import WorkoutScheduleList from "./WorkoutScheduleList";
+import ListTest from "@/components/ListTest"
 
 export default function UserInfo() {
 
@@ -23,7 +23,7 @@ export default function UserInfo() {
 
   const getWorkoutsByEmail = async () => {
     try {
-      const workouts = await fetch("api/workoutSchedules", {
+      const resUserExists = await fetch("api/schedules", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,14 +31,15 @@ export default function UserInfo() {
         body: JSON.stringify({ email }),
       });
 
-      const { user } = await workouts.json();
-      console.log(user)
+      const { user } = await resUserExists.json();
+
+      return user.workouts;
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
-  getWorkoutsByEmail();
+  const workouts = getWorkoutsByEmail();
 
   return (
     <div>
@@ -50,3 +51,5 @@ export default function UserInfo() {
     </div>
   );
 }
+
+//https://youtu.be/r8Dg0KVnfMA?t=857
