@@ -1,15 +1,16 @@
-import {Schema, mongoose} from "mongoose";
+import { Schema, mongoose } from "mongoose";
 
 const workoutSchema = new Schema(
-    {
-        title: String,
-        description: String,
-    },
-    {
-        timestamps: true,
-    }
-)
+  {
+    title: String,
+    description: String,
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Workout = mongoose.models.Workout || mongoose.model("Workout", workoutSchema)
+const Workout =
+  mongoose.models.Workout || mongoose.model("Workout", workoutSchema);
 
-export default Workout
+export default Workout;
