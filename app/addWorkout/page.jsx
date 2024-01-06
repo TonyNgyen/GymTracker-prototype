@@ -38,6 +38,7 @@ export default function AddWorkout() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+    <p>Test</p>
       <input
         onChange={(e) => setTitle(e.target.value)}
         value={title}
